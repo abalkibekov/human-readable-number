@@ -21,9 +21,8 @@ const numericClasses = ['', 'thousand', 'million', 'billion', 'trillion'];
 
 function splitToStringsByNumericClasses(number){
     let numberStr = '' + number;
-    let numberOfNumericClasses = ~~(numberStr.length / 3);
     let classes = [];
-    for (let i = 0; i < numberOfNumericClasses; i++){
+    while (numberStr.length > 3){
         classes.push(numberStr.slice(-3));
         numberStr = numberStr.slice(0, -3);
     }
